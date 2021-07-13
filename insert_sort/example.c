@@ -10,15 +10,19 @@ int main(){
     int size;
     size = sizeof(numbers) / sizeof(numbers[0]);
 
-    for(int i = 1; i < size; i++){ 
-            if( numbers[i] < numbers[i - i]){
-                int * curr =  &numbers[i];
-                int * prev = &numbers[i - i];
+    for(int i = 0; i < size; i++){ 
+
+        /* keep track of the back indexes*/
+        for(int j = 1; j < size; j ++){
+            if( numbers[j] < numbers[j - 1]){
+                int * curr =  &numbers[j];
+                int * prev = &numbers[j - 1];
 
                 swap(curr, prev);
-                i--;
+                j--;
                 continue;
             }
+        }
     }
 
     printf("Sorted array: ");
