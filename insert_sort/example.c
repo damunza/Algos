@@ -10,17 +10,15 @@ int main(){
     int size;
     size = sizeof(numbers) / sizeof(numbers[0]);
 
-    int i = 0;
-    while(i < size){
-        if(i > 0){
-            int * curr = &numbers[i];
-            int * prev = &numbers[i - 1];  
-            if( *curr < *prev){
+    for(int i = 1; i < size; i++){ 
+            if( numbers[i] < numbers[i - i]){
+                int * curr =  &numbers[i];
+                int * prev = &numbers[i - i];
+
                 swap(curr, prev);
+                i--;
                 continue;
             }
-        }
-        i++;
     }
 
     printf("Sorted array: ");
@@ -34,10 +32,8 @@ int main(){
 }
 
 void swap(int * a, int * b){
-    int * temp = a;
-    a = b;
-    b = temp;
-
-    return;
+    int temp = * a;
+    *a = *b;
+    *b = temp;
 }
 
