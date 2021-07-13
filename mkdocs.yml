@@ -1,4 +1,9 @@
 docs/
-    index.md
+    README.md
     sort/insert.md
     img/
+
+nav:
+    - Home : 'README.md'
+    - Sorting : 'sort/'
+        - insert sort : 'sort/insert.md'
